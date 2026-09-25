@@ -772,23 +772,23 @@
         let confirmCallback = null;
         let currentView = 'timetable';
 
-        // 15 Distinct High-Contrast Color Themes (Inline hex for absolute reliability & clear differentiation)
+        // 15 Distinct High-Contrast Color Themes with fully unique background & border hex codes
         const COLOR_STYLES = {
             ruby:    { bg: "#fee2e2", border: "#fca5a5", badge: "#dc2626", title: "#991b1b", sub: "#b91c1c", filterBg: "#fee2e2", filterText: "#991b1b" },
-            rose:    { bg: "#ffe4e6", border: "#fda4af", badge: "#e11d48", title: "#9f1239", sub: "#be123c", filterBg: "#ffe4e6", filterText: "#9f1239" },
-            orange:  { bg: "#ffedd5", border: "#fdba74", badge: "#ea580c", title: "#9a3412", sub: "#c2410c", filterBg: "#ffedd5", filterText: "#9a3412" },
-            amber:   { bg: "#fef3c7", border: "#fde047", badge: "#d97706", title: "#78350f", sub: "#b45309", filterBg: "#fef3c7", filterText: "#78350f" },
-            lime:    { bg: "#ecfccb", border: "#bef264", badge: "#65a30d", title: "#365314", sub: "#4d7c0f", filterBg: "#ecfccb", filterText: "#365314" },
-            emerald: { bg: "#d1fae5", border: "#6ee7b7", badge: "#059669", title: "#064e3b", sub: "#047857", filterBg: "#d1fae5", filterText: "#064e3b" },
-            teal:    { bg: "#ccfbf1", border: "#5eead4", badge: "#0d9488", title: "#134e4a", sub: "#0f766e", filterBg: "#ccfbf1", filterText: "#134e4a" },
-            cyan:    { bg: "#cffafe", border: "#67e8f9", badge: "#0891b2", title: "#164e63", sub: "#0e7490", filterBg: "#cffafe", filterText: "#164e63" },
-            sky:     { bg: "#e0f2fe", border: "#7dd3fc", badge: "#0284c7", title: "#0c4a6e", sub: "#0369a1", filterBg: "#e0f2fe", filterText: "#0c4a6e" },
-            indigo:  { bg: "#e0e7ff", border: "#a5b4fc", badge: "#4f46e5", title: "#312e81", sub: "#4338ca", filterBg: "#e0e7ff", filterText: "#312e81" },
-            violet:  { bg: "#ede9fe", border: "#c4b5fd", badge: "#7c3aed", title: "#4c1d95", sub: "#6d28d9", filterBg: "#ede9fe", filterText: "#4c1d95" },
-            purple:  { bg: "#f3e8ff", border: "#d8b4fe", badge: "#9333ea", title: "#581c87", sub: "#7e22ce", filterBg: "#f3e8ff", filterText: "#581c87" },
-            fuchsia: { bg: "#fae8ff", border: "#f0abfc", badge: "#c026d3", title: "#701a75", sub: "#a21caf", filterBg: "#fae8ff", filterText: "#701a75" },
-            slate:   { bg: "#e2e8f0", border: "#cbd5e1", badge: "#475569", title: "#0f172a", sub: "#334155", filterBg: "#e2e8f0", filterText: "#0f172a" },
-            bronze:  { bg: "#f5f5f4", border: "#d6d3d1", badge: "#78716c", title: "#1c1917", sub: "#44403c", filterBg: "#f5f5f4", filterText: "#1c1917" }
+            rose:    { bg: "#fce7f3", border: "#f472b6", badge: "#db2777", title: "#831843", sub: "#be185d", filterBg: "#fce7f3", filterText: "#831843" },
+            orange:  { bg: "#ffedd5", border: "#fb923c", badge: "#ea580c", title: "#7c2d12", sub: "#c2410c", filterBg: "#ffedd5", filterText: "#7c2d12" },
+            amber:   { bg: "#fef08a", border: "#eab308", badge: "#ca8a04", title: "#713f12", sub: "#854d0e", filterBg: "#fef08a", filterText: "#713f12" },
+            lime:    { bg: "#d9f99d", border: "#84cc16", badge: "#65a30d", title: "#3f6212", sub: "#4d7c0f", filterBg: "#d9f99d", filterText: "#3f6212" },
+            emerald: { bg: "#a7f3d0", border: "#34d399", badge: "#059669", title: "#022c22", sub: "#047857", filterBg: "#a7f3d0", filterText: "#022c22" },
+            teal:    { bg: "#99f6e4", border: "#2dd4bf", badge: "#0d9488", title: "#042f2e", sub: "#0f766e", filterBg: "#99f6e4", filterText: "#042f2e" },
+            cyan:    { bg: "#a5f3fc", border: "#22d3ee", badge: "#0891b2", title: "#083344", sub: "#0e7490", filterBg: "#a5f3fc", filterText: "#083344" },
+            sky:     { bg: "#bae6fd", border: "#38bdf8", badge: "#0284c7", title: "#082f49", sub: "#0369a1", filterBg: "#bae6fd", filterText: "#082f49" },
+            indigo:  { bg: "#c7d2fe", border: "#818cf8", badge: "#4f46e5", title: "#1e1b4b", sub: "#4338ca", filterBg: "#c7d2fe", filterText: "#1e1b4b" },
+            violet:  { bg: "#ddd6fe", border: "#a78bfa", badge: "#7c3aed", title: "#2e1065", sub: "#6d28d9", filterBg: "#ddd6fe", filterText: "#2e1065" },
+            purple:  { bg: "#e9d5ff", border: "#c084fc", badge: "#9333ea", title: "#3b0764", sub: "#7e22ce", filterBg: "#e9d5ff", filterText: "#3b0764" },
+            fuchsia: { bg: "#f5d0fe", border: "#e879f9", badge: "#c026d3", title: "#4a044e", sub: "#a21caf", filterBg: "#f5d0fe", filterText: "#4a044e" },
+            slate:   { bg: "#cbd5e1", border: "#94a3b8", badge: "#475569", title: "#0f172a", sub: "#334155", filterBg: "#cbd5e1", filterText: "#0f172a" },
+            bronze:  { bg: "#e7e5e4", border: "#a8a29e", badge: "#78716c", title: "#1c1917", sub: "#44403c", filterBg: "#e7e5e4", filterText: "#1c1917" }
         };
 
         const COLOR_KEYS = Object.keys(COLOR_STYLES);
