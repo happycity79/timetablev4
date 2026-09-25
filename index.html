@@ -646,268 +646,142 @@
     <script>
         // Preset Schedule Definitions
         const PRESETS = {
-            hlagri115_1: {
-                meta: {
-                    schoolName: "國立花蓮高農",
-                    semester: "115學年度第一學期",
-                    teacher: "石世鵬",
-                    subjectTag: "英文科",
-                    dateRange: "115.08.31 - 116.01.20",
-                    displayDays: 5
-                },
-                periods: [
-                    { id: 1, name: "第一節", start: "08:00", end: "08:50" },
-                    { id: 2, name: "第二節", start: "09:00", end: "09:50" },
-                    { id: 3, name: "第三節", start: "10:00", end: "10:50" },
-                    { id: 4, name: "第四節", start: "11:00", end: "11:50" },
-                    { id: "lunch", isBreak: true, name: "午休時間", start: "11:50", end: "12:50", desc: "午餐與休息時間" },
-                    { id: 5, name: "第五節", start: "13:00", end: "13:50" },
-                    { id: 6, name: "第六節", start: "14:00", end: "14:50" },
-                    { id: 7, name: "第七節", start: "15:00", end: "15:50" },
-                    { id: "cleaning", isBreak: true, name: "打掃時間", start: "15:50", end: "16:10", desc: "校園環境整潔時間" },
-                    { id: 8, name: "第八節", start: "16:10", end: "17:00" }
-                ],
-                cells: {
-                    "d1-p1": { subject: "英文", className: "一園", room: "", color: "auto", note: "" },
-                    "d1-p2": { subject: "英文", className: "二機", room: "", color: "auto", note: "" },
-                    "d1-p5": { subject: "英文", className: "一餐", room: "", color: "auto", note: "" },
-                    "d2-p1": { subject: "英文", className: "二餐", room: "", color: "auto", note: "" },
-                    "d2-p2": { subject: "實用英文", className: "二餐", room: "", color: "auto", note: "" },
-                    "d2-p3": { subject: "英文", className: "二機", room: "", color: "auto", note: "" },
-                    "d3-p1": { subject: "英文", className: "二林", room: "", color: "auto", note: "" },
-                    "d3-p3": { subject: "英文", className: "二餐", room: "", color: "auto", note: "" },
-                    "d3-p5": { subject: "班會", className: "班會", room: "", color: "auto", note: "" },
-                    "d4-p6": { subject: "生活英文", className: "一餐", room: "", color: "auto", note: "" },
-                    "d5-p1": { subject: "英文", className: "一餐", room: "", color: "auto", note: "" },
-                    "d5-p2": { subject: "英文", className: "一園", room: "", color: "auto", note: "" },
-                    "d5-p7": { subject: "英文", className: "二林", room: "", color: "auto", note: "" }
-                }
-            },
-
-            yangming113_2: {
-                meta: {
-                    schoolName: "桃園市立陽明高中",
-                    semester: "113學年度第二學期",
-                    teacher: "石世鵬",
-                    subjectTag: "英文科",
-                    dateRange: "114.02.11 - 114.06.30",
-                    displayDays: 5
-                },
-                periods: [
-                    { id: 1, name: "第一節", start: "08:10", end: "09:00" },
-                    { id: 2, name: "第二節", start: "09:10", end: "10:00" },
-                    { id: 3, name: "第三節", start: "10:10", end: "11:00" },
-                    { id: 4, name: "第四節", start: "11:10", end: "12:00" },
-                    { id: "lunch", isBreak: true, name: "午餐午休", start: "12:00", end: "13:00", desc: "午餐時間 12:00-12:30 / 午休時間 12:30-13:00" },
-                    { id: 5, name: "第五節", start: "13:00", end: "13:50" },
-                    { id: 6, name: "第六節", start: "14:00", end: "14:50" },
-                    { id: "cleaning", isBreak: true, name: "打掃時間", start: "14:50", end: "15:05", desc: "校園環境整潔時間" },
-                    { id: 7, name: "第七節", start: "15:05", end: "15:55" },
-                    { id: 8, name: "第八節", start: "16:00", end: "16:50" }
-                ],
-                cells: {
-                    "d1-p5": { subject: "英文", className: "210", room: "", color: "auto", note: "" },
-                    "d1-p6": { subject: "英文", className: "217", room: "", color: "auto", note: "" },
-                    "d1-p7": { subject: "英文", className: "204", room: "", color: "auto", note: "" },
-                    "d2-p1": { subject: "英文", className: "210", room: "", color: "auto", note: "" },
-                    "d2-p3": { subject: "英文", className: "207", room: "", color: "auto", note: "" },
-                    "d2-p4": { subject: "英文", className: "204", room: "", color: "auto", note: "" },
-                    "d2-p7": { subject: "英文", className: "217", room: "", color: "auto", note: "" },
-                    "d2-p8": { subject: "英輔", className: "207", room: "", color: "auto", note: "" },
-                    "d3-p1": { subject: "觀光英文", className: "302", room: "", color: "auto", note: "" },
-                    "d3-p2": { subject: "觀光英文", className: "302", room: "", color: "auto", note: "" },
-                    "d3-p4": { subject: "英文", className: "207", room: "", color: "auto", note: "" },
-                    "d3-p5": { subject: "英文", className: "210", room: "", color: "auto", note: "" },
-                    "d4-p1": { subject: "英文", className: "210", room: "", color: "auto", note: "" },
-                    "d4-p5": { subject: "英文", className: "207", room: "", color: "auto", note: "" },
-                    "d4-p6": { subject: "英文", className: "217", room: "", color: "auto", note: "" },
-                    "d4-p7": { subject: "英文", className: "204", room: "", color: "auto", note: "" },
-                    "d4-p8": { subject: "英輔", className: "204", room: "", color: "auto", note: "" },
-                    "d5-p1": { subject: "英文", className: "204", room: "", color: "auto", note: "" },
-                    "d5-p2": { subject: "英文", className: "217", room: "", color: "auto", note: "" },
-                    "d5-p7": { subject: "英文", className: "207", room: "", color: "auto", note: "" },
-                    "d5-p8": { subject: "英輔", className: "210", room: "", color: "auto", note: "" }
-                }
-            },
-
-            blank: {
-                meta: {
-                    schoolName: "自訂學校名稱",
-                    semester: "115學年度第一學期",
-                    teacher: "教師姓名",
-                    subjectTag: "專業科別",
-                    dateRange: "115.08.31 - 116.01.20",
-                    displayDays: 5
-                },
-                periods: [
-                    { id: 1, name: "第一節", start: "08:00", end: "08:50" },
-                    { id: 2, name: "第二節", start: "09:00", end: "09:50" },
-                    { id: 3, name: "第三節", start: "10:00", end: "10:50" },
-                    { id: 4, name: "第四節", start: "11:00", end: "11:50" },
-                    { id: "lunch", isBreak: true, name: "午休時間", start: "11:50", end: "12:50", desc: "午餐與休息時間" },
-                    { id: 5, name: "第五節", start: "13:00", end: "13:50" },
-                    { id: 6, name: "第六節", start: "14:00", end: "14:50" },
-                    { id: 7, name: "第七節", start: "15:00", end: "15:50" },
-                    { id: "cleaning", isBreak: true, name: "打掃時間", start: "15:50", end: "16:10", desc: "校園環境整潔時間" },
-                    { id: 8, name: "第八節", start: "16:10", end: "17:00" }
-                ],
-                cells: {}
-            }
-        };
-
-        const DAYS_CONFIG = [
-            { id: 1, name: "星期一", short: "週一" },
-            { id: 2, name: "星期二", short: "週二" },
-            { id: 3, name: "星期三", short: "週三" },
-            { id: 4, name: "星期四", short: "週四" },
-            { id: 5, name: "星期五", short: "週五" },
-            { id: 6, name: "星期六", short: "週六" },
-            { id: 7, name: "星期日", short: "週日" }
-        ];
-
-        let appState = null;
-        let activeFilterClass = 'all';
-        let currentEditingCellKey = null;
-        let currentView = 'timetable';
-        let draftPeriods = [];
-        let confirmCallback = null;
-
-        // 15 Distinct High-Contrast Palettes
+        // 15 Distinct High-Contrast Palettes with Visually Distinct Backgrounds & Borders
         const COLOR_STYLES = {
             ruby: {
-                bg: "bg-red-50/90 dark:bg-red-950/40",
-                border: "border-red-200 dark:border-red-800/60",
+                bg: "bg-red-100/90 dark:bg-red-900/40",
+                border: "border-red-300 dark:border-red-700",
                 badge: "bg-red-600 text-white",
-                title: "text-slate-900 dark:text-red-100",
-                sub: "text-red-700 dark:text-red-300",
+                title: "text-red-950 dark:text-red-100",
+                sub: "text-red-800 dark:text-red-300",
                 progress: "bg-red-500",
                 filter: "bg-red-600 text-white"
             },
             rose: {
-                bg: "bg-rose-50/90 dark:bg-rose-950/40",
-                border: "border-rose-200 dark:border-rose-800/60",
+                bg: "bg-rose-100/90 dark:bg-rose-900/40",
+                border: "border-rose-300 dark:border-rose-700",
                 badge: "bg-rose-500 text-white",
-                title: "text-slate-900 dark:text-rose-100",
-                sub: "text-rose-700 dark:text-rose-300",
+                title: "text-rose-950 dark:text-rose-100",
+                sub: "text-rose-800 dark:text-rose-300",
                 progress: "bg-rose-500",
                 filter: "bg-rose-500 text-white"
             },
             orange: {
-                bg: "bg-orange-50/90 dark:bg-orange-950/40",
-                border: "border-orange-200 dark:border-orange-800/60",
+                bg: "bg-orange-100/90 dark:bg-orange-900/40",
+                border: "border-orange-300 dark:border-orange-700",
                 badge: "bg-orange-500 text-white",
-                title: "text-slate-900 dark:text-orange-100",
-                sub: "text-orange-700 dark:text-orange-300",
+                title: "text-orange-950 dark:text-orange-100",
+                sub: "text-orange-800 dark:text-orange-300",
                 progress: "bg-orange-500",
                 filter: "bg-orange-500 text-white"
             },
             amber: {
-                bg: "bg-amber-50/90 dark:bg-amber-950/40",
-                border: "border-amber-200 dark:border-amber-800/60",
+                bg: "bg-amber-100/90 dark:bg-amber-900/40",
+                border: "border-amber-300 dark:border-amber-700",
                 badge: "bg-amber-500 text-white",
-                title: "text-slate-900 dark:text-amber-100",
-                sub: "text-amber-700 dark:text-amber-300",
+                title: "text-amber-950 dark:text-amber-100",
+                sub: "text-amber-800 dark:text-amber-300",
                 progress: "bg-amber-500",
                 filter: "bg-amber-500 text-white"
             },
             lime: {
-                bg: "bg-lime-50/90 dark:bg-lime-950/40",
-                border: "border-lime-200 dark:border-lime-800/60",
+                bg: "bg-lime-150/90 bg-lime-100 dark:bg-lime-900/40",
+                border: "border-lime-350 border-lime-300 dark:border-lime-700",
                 badge: "bg-lime-600 text-white",
-                title: "text-slate-900 dark:text-lime-100",
-                sub: "text-lime-700 dark:text-lime-300",
+                title: "text-lime-950 dark:text-lime-100",
+                sub: "text-lime-800 dark:text-lime-300",
                 progress: "bg-lime-500",
                 filter: "bg-lime-600 text-white"
             },
             emerald: {
-                bg: "bg-emerald-50/90 dark:bg-emerald-950/40",
-                border: "border-emerald-200 dark:border-emerald-800/60",
+                bg: "bg-emerald-100/90 dark:bg-emerald-900/40",
+                border: "border-emerald-300 dark:border-emerald-700",
                 badge: "bg-emerald-600 text-white",
-                title: "text-slate-900 dark:text-emerald-100",
-                sub: "text-emerald-700 dark:text-emerald-300",
+                title: "text-emerald-950 dark:text-emerald-100",
+                sub: "text-emerald-800 dark:text-emerald-300",
                 progress: "bg-emerald-500",
                 filter: "bg-emerald-600 text-white"
             },
             teal: {
-                bg: "bg-teal-50/90 dark:bg-teal-950/40",
-                border: "border-teal-200 dark:border-teal-800/60",
+                bg: "bg-teal-100/90 dark:bg-teal-900/40",
+                border: "border-teal-300 dark:border-teal-700",
                 badge: "bg-teal-600 text-white",
-                title: "text-slate-900 dark:text-teal-100",
-                sub: "text-teal-700 dark:text-teal-300",
+                title: "text-teal-950 dark:text-teal-100",
+                sub: "text-teal-800 dark:text-teal-300",
                 progress: "bg-teal-500",
                 filter: "bg-teal-600 text-white"
             },
             cyan: {
-                bg: "bg-cyan-50/90 dark:bg-cyan-950/40",
-                border: "border-cyan-200 dark:border-cyan-800/60",
+                bg: "bg-cyan-100/90 dark:bg-cyan-900/40",
+                border: "border-cyan-300 dark:border-cyan-700",
                 badge: "bg-cyan-600 text-white",
-                title: "text-slate-900 dark:text-cyan-100",
-                sub: "text-cyan-700 dark:text-cyan-300",
+                title: "text-cyan-950 dark:text-cyan-100",
+                sub: "text-cyan-800 dark:text-cyan-300",
                 progress: "bg-cyan-500",
                 filter: "bg-cyan-600 text-white"
             },
             sky: {
-                bg: "bg-sky-50/90 dark:bg-sky-950/40",
-                border: "border-sky-200 dark:border-sky-800/60",
+                bg: "bg-sky-100/90 dark:bg-sky-900/40",
+                border: "border-sky-300 dark:border-sky-700",
                 badge: "bg-sky-600 text-white",
-                title: "text-slate-900 dark:text-sky-100",
-                sub: "text-sky-700 dark:text-sky-300",
+                title: "text-sky-950 dark:text-sky-100",
+                sub: "text-sky-800 dark:text-sky-300",
                 progress: "bg-sky-500",
                 filter: "bg-sky-600 text-white"
             },
             indigo: {
-                bg: "bg-indigo-50/90 dark:bg-indigo-950/40",
-                border: "border-indigo-200 dark:border-indigo-800/60",
+                bg: "bg-indigo-100/90 dark:bg-indigo-900/40",
+                border: "border-indigo-300 dark:border-indigo-700",
                 badge: "bg-indigo-600 text-white",
-                title: "text-slate-900 dark:text-indigo-100",
-                sub: "text-indigo-700 dark:text-indigo-300",
+                title: "text-indigo-950 dark:text-indigo-100",
+                sub: "text-indigo-800 dark:text-indigo-300",
                 progress: "bg-indigo-500",
                 filter: "bg-indigo-600 text-white"
             },
             violet: {
-                bg: "bg-violet-50/90 dark:bg-violet-950/40",
-                border: "border-violet-200 dark:border-violet-800/60",
+                bg: "bg-violet-100/90 dark:bg-violet-900/40",
+                border: "border-violet-300 dark:border-violet-700",
                 badge: "bg-violet-600 text-white",
-                title: "text-slate-900 dark:text-violet-100",
-                sub: "text-violet-700 dark:text-violet-300",
+                title: "text-violet-950 dark:text-violet-100",
+                sub: "text-violet-800 dark:text-violet-300",
                 progress: "bg-violet-500",
                 filter: "bg-violet-600 text-white"
             },
             purple: {
-                bg: "bg-purple-50/90 dark:bg-purple-950/40",
-                border: "border-purple-200 dark:border-purple-800/60",
+                bg: "bg-purple-100/90 dark:bg-purple-900/40",
+                border: "border-purple-300 dark:border-purple-700",
                 badge: "bg-purple-600 text-white",
-                title: "text-slate-900 dark:text-purple-100",
-                sub: "text-purple-700 dark:text-purple-300",
+                title: "text-purple-950 dark:text-purple-100",
+                sub: "text-purple-800 dark:text-purple-300",
                 progress: "bg-purple-500",
                 filter: "bg-purple-600 text-white"
             },
             fuchsia: {
-                bg: "bg-fuchsia-50/90 dark:bg-fuchsia-950/40",
-                border: "border-fuchsia-200 dark:border-fuchsia-800/60",
+                bg: "bg-fuchsia-100/90 dark:bg-fuchsia-900/40",
+                border: "border-fuchsia-300 dark:border-fuchsia-700",
                 badge: "bg-fuchsia-600 text-white",
-                title: "text-slate-900 dark:text-fuchsia-100",
-                sub: "text-fuchsia-700 dark:text-fuchsia-300",
+                title: "text-fuchsia-950 dark:text-fuchsia-100",
+                sub: "text-fuchsia-800 dark:text-fuchsia-300",
                 progress: "bg-fuchsia-500",
                 filter: "bg-fuchsia-600 text-white"
             },
             slate: {
-                bg: "bg-slate-200/90 dark:bg-slate-800/80",
-                border: "border-slate-300 dark:border-slate-700",
+                bg: "bg-slate-200/90 dark:bg-slate-700/80",
+                border: "border-slate-400 dark:border-slate-500",
                 badge: "bg-slate-700 text-white dark:bg-slate-600",
                 title: "text-slate-900 dark:text-slate-100",
-                sub: "text-slate-700 dark:text-slate-300",
+                sub: "text-slate-800 dark:text-slate-300",
                 progress: "bg-slate-600",
                 filter: "bg-slate-700 text-white dark:bg-slate-600"
             },
             bronze: {
-                bg: "bg-yellow-50/90 dark:bg-yellow-950/40",
-                border: "border-yellow-200 dark:border-yellow-800/60",
-                badge: "bg-yellow-700 text-white",
-                title: "text-slate-900 dark:text-yellow-100",
-                sub: "text-yellow-800 dark:text-yellow-300",
-                progress: "bg-yellow-600",
-                filter: "bg-yellow-700 text-white"
+                bg: "bg-stone-200/90 dark:bg-stone-800/80",
+                border: "border-stone-400 dark:border-stone-600",
+                badge: "bg-amber-800 text-white",
+                title: "text-stone-900 dark:text-stone-100",
+                sub: "text-stone-800 dark:text-stone-300",
+                progress: "bg-amber-800",
+                filter: "bg-amber-800 text-white"
             }
         };
 
@@ -920,7 +794,7 @@
             if (!className) return COLOR_STYLES.emerald;
             let hash = 0;
             for (let i = 0; i < className.length; i++) {
-                hash = className.charCodeAt(i) + ((hash << 5) - hash);
+                hash = className.charCodeAt(i) * 31 + ((hash << 7) - hash);
             }
             const index = Math.abs(hash) % COLOR_KEYS.length;
             return COLOR_STYLES[COLOR_KEYS[index]];
